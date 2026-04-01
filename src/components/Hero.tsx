@@ -1,66 +1,109 @@
 import { Github, Linkedin, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import profileImg from "@/assets/profile.png";
+import { ReactTyped } from "react-typed";
+import { motion } from "framer-motion";
+import heroBg from "@/assets/hero-bg.png";
 
 const Hero = () => (
-  <section className="min-h-screen flex items-center relative overflow-hidden pt-16">
-    {/* Gradient blobs */}
-    <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-    <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+  <section className="relative min-h-screen flex items-center overflow-hidden">
+    {/* Full-width background image */}
+    <div className="absolute inset-0">
+      <img
+        src={heroBg}
+        alt="Sri Naveenraj R"
+        className="w-full h-full object-cover object-center"
+      />
+      {/* Dark gradient overlay - left side darker */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,30%,8%)] via-[hsl(220,30%,8%,0.85)] to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,30%,8%)] via-transparent to-[hsl(220,30%,8%,0.3)]" />
+    </div>
 
-    <div className="container mx-auto px-4 md:px-8 grid md:grid-cols-2 gap-12 items-center relative z-10">
-      {/* Left */}
-      <div className="space-y-6 text-center md:text-left">
-        <p className="text-4xl md:text-5xl">Hi 👋</p>
-        <h1 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
+    {/* Content */}
+    <div className="container mx-auto px-4 md:px-8 relative z-10">
+      <div className="max-w-2xl space-y-6">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl"
+        >
+          Hi 👋
+        </motion.p>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-4xl md:text-6xl font-bold text-foreground leading-tight"
+        >
           I'm <span className="text-gradient">Sri Naveenraj R</span>
-        </h1>
-        <p className="text-xl md:text-2xl text-primary font-medium">
-          Aspiring Software Engineer
-        </p>
-        <p className="text-muted-foreground max-w-md mx-auto md:mx-0">
-          Full-stack developer passionate about building scalable web applications.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+        </motion.h1>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-xl md:text-2xl text-primary font-medium h-8"
+        >
+          <ReactTyped
+            strings={[
+              "Aspiring Software Engineer",
+              "Full Stack Developer",
+              "Problem Solver",
+            ]}
+            typeSpeed={50}
+            backSpeed={30}
+            loop
+          />
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-muted-foreground max-w-md text-lg"
+        >
+          Self-taught full-stack developer passionate about building scalable web
+          applications.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex flex-col sm:flex-row gap-4"
+        >
           <Button size="lg" asChild>
             <a href="#projects">View My Work</a>
           </Button>
           <Button size="lg" variant="outline" asChild>
             <a href="#contact">Get In Touch</a>
           </Button>
-        </div>
-        <div className="flex gap-4 justify-center md:justify-start pt-2">
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="flex gap-4 pt-2"
+        >
           <a
-            href="https://github.com"
+            href="https://github.com/srinaveenrajr"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all text-muted-foreground"
+            className="p-2 rounded-lg bg-secondary/80 hover:bg-primary hover:text-primary-foreground transition-all text-muted-foreground"
           >
             <Github size={20} />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/sri-naveenraj-r/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all text-muted-foreground"
+            className="p-2 rounded-lg bg-secondary/80 hover:bg-primary hover:text-primary-foreground transition-all text-muted-foreground"
           >
             <Linkedin size={20} />
           </a>
-        </div>
-      </div>
-
-      {/* Right */}
-      <div className="flex justify-center">
-        <div className="relative">
-          <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl scale-110" />
-          <img
-            src={profileImg}
-            alt="Sri Naveen Raj"
-            className="relative w-72 h-72 md:w-96 md:h-96 rounded-full object-cover border-4 border-primary/30 shadow-2xl"
-            width={384}
-            height={384}
-          />
-        </div>
+        </motion.div>
       </div>
     </div>
 
