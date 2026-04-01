@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -13,17 +13,12 @@ const navLinks = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("light", !isDark);
-  }, [isDark]);
 
   return (
     <nav
@@ -33,7 +28,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-16">
         <a href="#" className="text-xl font-bold text-foreground">
-          Sri Naveen Raj
+          Sri Naveenraj R
         </a>
 
         {/* Desktop */}
@@ -47,12 +42,6 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <button
-            onClick={() => setIsDark(!isDark)}
-            className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground"
-          >
-            {isDark ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
           <Button size="sm" asChild>
             <a href="#contact">Hire Me</a>
           </Button>
@@ -80,17 +69,9 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <div className="flex items-center gap-3 pt-2">
-            <button
-              onClick={() => setIsDark(!isDark)}
-              className="p-2 rounded-lg hover:bg-secondary transition-colors text-muted-foreground"
-            >
-              {isDark ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
-            <Button size="sm" className="w-full" asChild>
-              <a href="#contact">Hire Me</a>
-            </Button>
-          </div>
+          <Button size="sm" className="w-full" asChild>
+            <a href="#contact">Hire Me</a>
+          </Button>
         </div>
       )}
     </nav>
