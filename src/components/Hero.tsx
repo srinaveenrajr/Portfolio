@@ -11,12 +11,10 @@ const Hero = () => (
       <img
         src={heroBg}
         alt="Sri Naveenraj R"
-        className="w-full h-full object-contain object-right"
-        width={1920}
-        height={1080}
+        className="absolute right-0 top-0 h-full w-[70%] object-cover object-top"
       />
       {/* Solid dark left side + gradient fade into image */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,30%,8%)] from-30% via-[hsl(220,30%,8%,0.7)] via-50% to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,30%,8%)] from-30% via-[hsl(220,30%,8%,0.8)] via-45% to-transparent" />
     </div>
 
     {/* Content */}
