@@ -16,7 +16,6 @@ const Hero = () => (
       {/* Solid dark left side + gradient fade into image */}
       <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,30%,8%)] from-35% via-[hsl(220,30%,8%,0.7)] via-55% to-transparent" />
     </div>
-    </div>
 
     {/* Content */}
     <div className="container mx-auto px-4 md:px-8 relative z-10">
