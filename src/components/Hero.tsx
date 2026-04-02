@@ -15,9 +15,9 @@ const Hero = () => (
         width={1920}
         height={1080}
       />
-      {/* Dark gradient overlay - left side darker */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,30%,8%)] via-[hsl(220,30%,8%,0.85)] to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,30%,8%)] via-transparent to-[hsl(220,30%,8%,0.3)]" />
+      {/* Dark overlay so text is readable, face still visible */}
+      <div className="absolute inset-0 bg-[hsl(220,30%,8%,0.55)]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,30%,8%,0.85)] via-[hsl(220,30%,8%,0.5)] to-[hsl(220,30%,8%,0.2)]" />
     </div>
 
     {/* Content */}
