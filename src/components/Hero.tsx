@@ -11,13 +11,12 @@ const Hero = () => (
       <img
         src={heroBg}
         alt="Sri Naveenraj R"
-        className="w-full h-full object-cover object-center"
+        className="w-full h-full object-contain object-right"
         width={1920}
         height={1080}
       />
-      {/* Dark overlay so text is readable, face still visible */}
-      <div className="absolute inset-0 bg-[hsl(220,30%,8%,0.55)]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,30%,8%,0.85)] via-[hsl(220,30%,8%,0.5)] to-[hsl(220,30%,8%,0.2)]" />
+      {/* Solid dark left side + gradient fade into image */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,30%,8%)] from-30% via-[hsl(220,30%,8%,0.7)] via-50% to-transparent" />
     </div>
 
     {/* Content */}
