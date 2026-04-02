@@ -7,14 +7,14 @@ import heroBg from "@/assets/hero-bg.jpg";
 const Hero = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
     {/* Full-width background image */}
-    <div className="absolute inset-0 flex justify-end">
+    <div className="absolute inset-0">
       <img
         src={heroBg}
         alt="Sri Naveenraj R"
-        className="h-full w-auto max-w-none object-contain object-right-bottom"
+        className="absolute right-0 top-0 h-full w-[70%] object-cover object-top"
       />
       {/* Solid dark left side + gradient fade into image */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,30%,8%)] from-35% via-[hsl(220,30%,8%,0.7)] via-55% to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,30%,8%)] from-30% via-[hsl(220,30%,8%,0.8)] via-45% to-transparent" />
     </div>
 
     {/* Content */}
