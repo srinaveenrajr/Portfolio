@@ -2,7 +2,7 @@ import { Github, Linkedin, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ReactTyped } from "react-typed";
 import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bg.png";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
@@ -12,6 +12,8 @@ const Hero = () => (
         src={heroBg}
         alt="Sri Naveenraj R"
         className="w-full h-full object-cover object-center"
+        width={1920}
+        height={1080}
       />
       {/* Dark gradient overlay - left side darker */}
       <div className="absolute inset-0 bg-gradient-to-r from-[hsl(220,30%,8%)] via-[hsl(220,30%,8%,0.85)] to-transparent" />
@@ -27,7 +29,7 @@ const Hero = () => (
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl"
         >
-          Hi 👋
+          Hi everyone 👋
         </motion.p>
 
         <motion.h1
@@ -47,8 +49,8 @@ const Hero = () => (
         >
           <ReactTyped
             strings={[
-              "Aspiring Software Engineer",
               "Full Stack Developer",
+              "Aspiring Software Engineer",
               "Problem Solver",
             ]}
             typeSpeed={50}
@@ -63,8 +65,7 @@ const Hero = () => (
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-muted-foreground max-w-md text-lg"
         >
-          Self-taught full-stack developer passionate about building scalable web
-          applications.
+          I build scalable web applications and modern user experiences.
         </motion.p>
 
         <motion.div
@@ -74,10 +75,10 @@ const Hero = () => (
           className="flex flex-col sm:flex-row gap-4"
         >
           <Button size="lg" asChild>
-            <a href="#projects">View My Work</a>
+            <a href="#projects">View Projects</a>
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <a href="#contact">Get In Touch</a>
+            <a href="#contact">Contact Me</a>
           </Button>
         </motion.div>
 
